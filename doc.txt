@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Grammar and Islamic School Mithalak - Student Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #1a5e63 0%, #0d8bf2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            margin-right: 15px;
+            color: #ffcc00;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .logo-text p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #1a5e63;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 0;
+        }
+        
+        .welcome-section {
+            text-align: center;
+            margin-bottom: 40px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .welcome-section h2 {
+            color: #1a5e63;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+        
+        .welcome-section p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Founder Section */
+        .founder-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .founder-section h2 {
+            color: #1a5e63;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .founder-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .founder-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            text-align: center;
+        }
+        
+        .founder-image img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .founder-info {
+            flex: 2;
+            min-width: 300px;
+            max-width: 600px;
+        }
+        
+        .founder-info h3 {
+            color: #1a5e63;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .founder-title {
+            color: #0d8bf2;
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .founder-qualification {
+            color: #1a5e63;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .founder-info p {
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .founder-quote {
+            font-style: italic;
+            color: #0d8bf2;
+            border-left: 4px solid #0d8bf2;
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+        
+        /* Upload Sections */
+        .upload-sections {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .upload-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .upload-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .upload-card h3 {
+            color: #1a5e63;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4f8;
+            display: flex;
+            align-items: center;
+        }
+        
+        .upload-card h3 i {
+            margin-right: 10px;
+            color: #0d8bf2;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: #0d8bf2;
+            outline: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a5e63 0%, #0d8bf2 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        /* File Upload */
+        .file-upload {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-upload-btn {
+            background: #f0f4f8;
+            color: #0d8bf2;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            transition: background 0.3s;
+            border: 1px dashed #0d8bf2;
+        }
+        
+        .file-upload-btn:hover {
+            background: #e4e9f2;
+        }
+        
+        .file-upload-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        /* Image Preview */
+        .image-preview {
+            margin-top: 20px;
+            text-align: center;
+            display: none;
+        }
+        
+        .image-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .instructions h3 {
+            color: #1a5e63;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .instructions h3 i {
+            margin-right: 10px;
+            color: #0d8bf2;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a5e63 0%, #0d8bf2 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer-content p {
+            margin: 5px 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .upload-sections {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            .founder-content {
+                flex-direction: column;
+            }
+            
+            .founder-image, .founder-info {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-mosque"></i>
+                    <div class="logo-text">
+                        <h1>Ahmad Grammar and Islamic School Mithalak</h1>
+                        <p>Student Portal - Marks Management System</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-upload"></i> Upload Marks</a></li>
+                <li><a href="#"><i class="fas fa-image"></i> Upload Images</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Students</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="welcome-section">
+                <h2>Welcome to Student Marks Portal</h2>
+                <p>Upload student marks and images securely through this portal. Ensure all information is accurate before submission.</p>
+            </section>
+
+            <section class="founder-section">
+                <h2>Our Founder</h2>
+                <div class="founder-content">
+                    <div class="founder-image">
+                        <img src="https://placehold.co/400x500/1a5e63/white?text=Engineer+Zafar+Iqbal" alt="Founder of Ahmad Grammar and Islamic School">
+                        <div class="file-upload" style="margin-top: 20px;">
+                            <div class="file-upload-btn">
+                                <i class="fas fa-camera"></i> Upload Founder's Image
+                            </div>
+                            <input type="file" id="founder-image-upload" class="file-upload-input" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="founder-info">
+                        <h3>Engineer Zafar Iqbal</h3>
+                        <div class="founder-title">Founder & Principal</div>
+                        <div class="founder-qualification">
+                            <div>B.Tech from Preston University Islamabad</div>
+                            <div>B.Ed from University of Education</div>
+                        </div>
+                        <p>Founded in 2015, Ahmad Grammar and Islamic School Mithalak has been providing quality education with Islamic values. Our founder, Engineer Zafar Iqbal, envisioned an institution that would nurture young minds with both modern education and traditional Islamic teachings.</p>
+                        <p>Engineer Zafar Iqbal dedicated his career to the cause of education, believing that knowledge is the key to personal development and social progress. His vision continues to guide our school's mission to this day.</p>
+                        <div class="founder-quote">
+                            "Education is not just about acquiring knowledge, but about building character and serving humanity with compassion and wisdom."
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="upload-sections">
+                <section class="upload-card">
+                    <h3><i class="fas fa-upload"></i> Upload Student Marks</h3>
+                    <form id="marks-form">
+                        <div class="form-group">
+                            <label for="student-id">Student ID</label>
+                            <input type="text" id="student-id" class="form-control" placeholder="Enter student ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" class="form-control" placeholder="Enter student name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="class">Class</label>
+                            <select id="class" class="form-control" required>
+                                <option value="">Select class</option>
+                                <option value="1">Class 1</option>
+                                <option value="2">Class 2</option>
+                                <option value="3">Class 3</option>
+                                <option value="4">Class 4</option>
+                                <option value="5">Class 5</option>
+                                <option value="6">Class 6</option>
+                                <option value="7">Class 7</option>
+                                <option value="8">Class 8</option>
+                                <option value="9">Class 9</option>
+                                <option value="10">Class 10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select subject</option>
+                                <option value="islamiyat">Islamiyat</option>
+                                <option value="urdu">Urdu</option>
+                                <option value="english">English</option>
+                                <option value="math">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="history">History</option>
+                                <option value="geography">Geography</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="marks">Marks Obtained</label>
+                            <input type="number" id="marks" class="form-control" placeholder="Enter marks" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="marks-file">Marks File (CSV/Excel) - Optional</label>
+                            <div class="file-upload">
+                                <div class="file-upload-btn">
+                                    <i class="fas fa-file-excel"></i> Choose File
+                                </div>
+                                <input type="file" id="marks-file" class="file-upload-input" accept=".csv,.xlsx,.xls">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-cloud-upload-alt"></i> Upload Marks</button>
+                    </form>
+                </section>
+
+                <section class="upload-card">
+                    <h3><i class="fas fa-image"></i> Upload Student Image</h3>
+                    <form id="image-form">
+                        <div class="form-group">
+                            <label for="image-student-id">Student ID</label>
+                            <input type="text" id="image-student-id" class="form-control" placeholder="Enter student ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-image">Student Image</label>
+                            <div class="file-upload">
+                                <div class="file-upload-btn">
+                                    <i class="fas fa-camera"></i> Choose Image
+                                </div>
+                                <input type="file" id="student-image" class="file-upload-input" accept="image/*" required>
+                            </div>
+                        </div>
+                        <div class="image-preview" id="image-preview">
+                            <img src="" alt="Image Preview">
+                        </div>
+                        <div class="form-group">
+                            <label for="image-notes">Notes (Optional)</label>
+                            <textarea id="image-notes" class="form-control" placeholder="Add any notes about the image" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-cloud-upload-alt"></i> Upload Image</button>
+                    </form>
+                </section>
+            </div>
+
+            <section class="instructions">
+                <h3><i class="fas fa-info-circle"></i> Upload Instructions</h3>
+                <ol>
+                    <li>Ensure all student information is accurate before uploading.</li>
+                    <li>Marks files should be in CSV or Excel format with proper column headers.</li>
+                    <li>Images should be clear and in JPEG, PNG, or GIF format.</li>
+                    <li>File size should not exceed 5MB for images and 10MB for marks files.</li>
+                    <li>After upload, verify the data in the confirmation page.</li>
+                    <li>Contact admin@agism.edu.pk if you encounter any issues.</li>
+                </ol>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Ahmad Grammar and Islamic School Mithalak. All rights reserved.</p>
+                <p>Contact: admin@agism.edu.pk | Phone: +92 XXX XXXXXXX</p>
+                <p>Address: Main Street, Mithalak, Pakistan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form validation and feedback
+        document.addEventListener('DOMContentLoaded', function() {
+            const marksForm = document.getElementById('marks-form');
+            const imageForm = document.getElementById('image-form');
+            const studentImage = document.getElementById('student-image');
+            const imagePreview = document.getElementById('image-preview');
+            const founderImageUpload = document.getElementById('founder-image-upload');
+            
+            // Marks form submission
+            marksForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const studentId = document.getElementById('student-id').value;
+                const studentName = document.getElementById('student-name').value;
+                const studentClass = document.getElementById('class').value;
+                const subject = document.getElementById('subject').value;
+                const marks = document.getElementById('marks').value;
+                
+                if (studentId && studentName && studentClass && subject && marks) {
+                    alert(Marks for ${studentName} (ID: ${studentId}) from class ${studentClass} in ${subject} uploaded successfully!);
+                    marksForm.reset();
+                }
+            });
+            
+            // Image form submission
+            imageForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const studentId = document.getElementById('image-student-id').value;
+                const studentImage = document.getElementById('student-image').files[0];
+                
+                if (studentId && studentImage) {
+                    alert(Image for student ID ${studentId} uploaded successfully!);
+                    imageForm.reset();
+                    imagePreview.style.display = 'none';
+                }
+            });
+            
+            // Founder image upload
+            founderImageUpload.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    alert('Founder image uploaded successfully!');
+                    // In a real application, you would upload the image to a server here
+                }
+            });
+            
+            // Image preview functionality
+            studentImage.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        imagePreview.querySelector('img').src = e.target.result;
+                        imagePreview.style.display = 'block';
+                    }
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Update file upload button text
+            const fileInputs = document.querySelectorAll('.file-upload-input');
+            fileInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const button = this.previousElementSibling;
+                    if (this.files.length > 0) {
+                        button.innerHTML = <i class="fas fa-file"></i> ${this.files[0].name};
+                    } else {
+                        button.innerHTML = <i class="fas fa-file"></i> Choose File;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
